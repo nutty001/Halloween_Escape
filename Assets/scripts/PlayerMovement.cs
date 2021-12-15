@@ -80,6 +80,6 @@ public class PlayerMovement : MonoBehaviour
 
     public bool canAttack()
     {
-        return horizontalInput == 0 && isGrounded();
+        return horizontalInput == 0 && isGrounded(); 
     } 
 }

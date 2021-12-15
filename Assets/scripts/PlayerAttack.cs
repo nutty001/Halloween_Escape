@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]private float attackCooldown;
     private Animator anim;
     private PlayerMovement playerMovement;
+    private float 
 
     private void Awake()
     {
@@ -23,6 +24,12 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButton(0))
+            Attack();
+    }
+
+    private void Attack()
+    {
+
     }
 }
