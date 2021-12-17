@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpPower;
     private Rigidbody2D body;
     private Animator anim;
-    private BoxCollider2D boxCollider;
+    private CapsuleCollider2D capsuleCollider;
     private float horizontalInput;
     
 
@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
         //get reference for rigidbody and animator from object
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        boxCollider = GetComponent<BoxCollider2D>();
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
 
 
     }
@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isGrounded()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size,0,Vector2.down,0.1f,groundLayer);
+        RaycastHit2D raycastHit = Physics2D.CapsuleCast(capsuleCollider.bounds.center, capsuleCollider.bounds.size,0,Vector2.down,0.1f,groundLayer);
         return raycastHit.collider!=null;
     }
    
