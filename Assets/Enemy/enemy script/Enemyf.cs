@@ -19,7 +19,7 @@ public class Enemyf : MonoBehaviour
 
     {
         
-            if (Vector2.Distance(transform.position, target.position) > 1.5) {
+            if (Vector2.Distance(transform.position, target.position) > 5) {
 
                 transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
             }
