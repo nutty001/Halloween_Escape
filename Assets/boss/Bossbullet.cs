@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bossbullet: MonoBehaviour {
+public class Bossbullet: MonoBehaviour {
 
 	[SerializeField]
 	GameObject bullet;

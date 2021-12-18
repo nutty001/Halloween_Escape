@@ -9302,7 +9302,7 @@ GameObject:
   - component: {fileID: 1662032129}
   - component: {fileID: 1662032130}
   m_Layer: 8
-  m_Name: HeavyBandit_Idle_0
+  m_Name: Enemy_g1
   m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9385,10 +9385,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a2244f01be20c45a45c9c965c746b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 2
   MovingRight: 0
-  RayDistance: 0
-  groundDetection: {fileID: 0}
+  RayDistance: 1
+  groundDetection: {fileID: 1784871618}
 --- !u!61 &1662032129
 BoxCollider2D:
   m_ObjectHideFlags: 0
