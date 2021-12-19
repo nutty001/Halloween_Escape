@@ -4,28 +4,27 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-	float moveSpeed = 5f;
+        // Use this for initialization
+        private float bulletSpeed;
+        GameObject parent;
 
-	Rigidbody2D rb;
+        private Vector3 theScale;
 
-	PlayerAttack target;
-	Vector2 moveDirection;
+        void Start()
+        {
 
-	// Use this for initialization
-	void Start () {
-		rb = GetComponent<Rigidbody2D> ();
-		target = GameObject.FindObjectOfType<PlayerAttack>();
-		moveDirection = (target.transform.position - transform.position).normalized * moveSpeed;
-		rb.velocity = new Vector2 (moveDirection.x, moveDirection.y);
-		Destroy (gameObject, 3f);
-	}
+            rigidbody2D.velocity = new Vector2(bulletSpeed, 0);
+        }
 
-	void OnTriggerEnter2D (Collider2D col)
-	{
-		if (col.gameObject.name.Equals ("PlayerAttack")) {
-			Debug.Log ("Hit!");
-			//Destroy (gameObject);
-		}
-	}
+        // Update is called once per frame
+        void Update()
+        {
 
-}
+            //  if(transform.localScale.x < 0) bulletSpeed = -100;
+            //  if(transform.localScale.x > 0) bulletSpeed = 100;
+        }
+        public void SetEnemy(GameObject obj)
+        {
+            parent = obj;
+        }
+    }

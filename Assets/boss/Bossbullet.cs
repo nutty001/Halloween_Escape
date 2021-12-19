@@ -2,32 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bossbullet: MonoBehaviour {
+public class BossBullet : MonoBehaviour {
 
-	[SerializeField]
-	GameObject bullet;
+    //Put this on your enemy in a different script.
+    [SerializeField]
+    GameObject Bullet;
 
-	float fireRate;
-	float nextFire;
+    float fireRate;
+    float nextFire;
 
-	// Use this for initialization
-	void Start () {
-		fireRate = 1f;
-		nextFire = Time.time;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		CheckIfTimeToFire ();
-	}
+    void Start()
+    {
+        fireRate = 1f;
+        nextFire = Time.time;
+    }
 
-	void CheckIfTimeToFire()
-	{
-		if (Time.time > nextFire) {
-			Instantiate (bullet, transform.position, Quaternion.identity);
-			nextFire = Time.time + fireRate;
-		}
-		
-	}
+    void Update()
+    {
+        CheckIfTimeToFire();
+    }
+
+    void CheckIfTimeToFire()
+    {
+        if (Time.time > nextFire)
+        {
+            Instantiate(Bullet, transform.position, Quaternion.identity);
+            nextFire = Time.time + fireRate;
+        }
+    }
+
 
 }
