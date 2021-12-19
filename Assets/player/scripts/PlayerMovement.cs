@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private CapsuleCollider2D capsuleCollider;
     private float horizontalInput;
-    public Vector3 respawnPoint;
+    
 
 
     private void Awake()
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
-        respawnPoint = transform.position;
+        
     }
 
     // Update is called once per frame
@@ -82,17 +82,5 @@ public class PlayerMovement : MonoBehaviour
     public bool canAttack()
     {
         return horizontalInput == 0 && isGrounded(); 
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag=="FallDetector")
-        {
-            transform.position = respawnPoint;
-        }
-        if(other.tag=="Checkpoint")
-        {
-            respawnPoint = other.transform.position;
-        }
-    }
+    } 
 }
